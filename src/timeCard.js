@@ -1,7 +1,7 @@
 const schedule = require('node-schedule')
 const axios = require('axios')
 const timeCardCorn = () => {
-    schedule.scheduleJob({hour: 18, minute: 07, dayOfWeek: [6, 7]}, () => {
+    schedule.scheduleJob({hour: 18, minute: 7, dayOfWeek: [6, 7]}, () => {
         axios.post(process.env.WECOM_ROBOT_URL, {
             msgtype: "text", text: {
                 content: "😜无敌小可爱,来提醒你们填写TimeCard啦"
