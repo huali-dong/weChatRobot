@@ -1,7 +1,7 @@
 const schedule = require('node-schedule')
 const axios = require('axios')
 const scheduleCronStyle = () => {
-    schedule.scheduleJob('5 * * * * *', () => {
+    schedule.scheduleJob({hour: 17, minute: 40, dayOfWeek: [6,7]}, () => {
         axios.post("", {
             msgtype: "text",
             text: {
