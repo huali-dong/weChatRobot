@@ -1,7 +1,7 @@
 const schedule = require('node-schedule')
 const axios = require('axios')
 const codeReviewCorn = () => {
-    schedule.scheduleJob({hour: 18, minute: 5, dayOfWeek: [6, 7]}, () => {
+    schedule.scheduleJob({hour: 17, minute: 30, dayOfWeek: [6, 7]}, () => {
         axios.post(process.env.WECOM_ROBOT_URL, {
             msgtype: "text", text: {
                 content: "😜dev们准备一下，该codeReview啦"
