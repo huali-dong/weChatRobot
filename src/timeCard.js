@@ -1,11 +1,10 @@
 const schedule = require('node-schedule')
 const axios = require('axios')
-const scheduleCronStyle = () => {
-    schedule.scheduleJob({hour: 17, minute: 40, dayOfWeek: [6,7]}, () => {
-        axios.post("", {
-            msgtype: "text",
-            text: {
-                content: "我是你的无敌小可爱"
+const timeCardCorn = () => {
+    schedule.scheduleJob({hour: 18, minute: 07, dayOfWeek: [6, 7]}, () => {
+        axios.post(process.env.WECOM_ROBOT_URL, {
+            msgtype: "text", text: {
+                content: "😜无敌小可爱,来提醒你们填写TimeCard啦"
             }
         }).then(() => {
             console.log('执行成功')
@@ -15,4 +14,4 @@ const scheduleCronStyle = () => {
     })
 }
 
-scheduleCronStyle();
+exports.timeCardCorn = timeCardCorn
